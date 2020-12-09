@@ -11,7 +11,7 @@
 		<tbody>
 			<tr v-for="transaction in transactions">
 				<td>{{transaction.Date}}</td>
-				<td><strong>{{transaction.Ledger}}</strong></td>
+				<td><strong>{{transaction.Ledger||'-'}}</strong></td>
 				<td>{{transaction.Company}}</td>
 				<td>{{transaction.Amount|format_currency}}</td>
 			</tr>
@@ -145,20 +145,24 @@ only screen and (max-width: 760px),
   
   td { 
     /* Behave  like a "row" */
-    border: none;
-    border-bottom: 1px solid #eee; 
+    border: none !important;
+
+    padding: 0.5rem !important;
+    font-size: 0.8em;
+
     position: relative;
-    padding-left: 50%; 
+    padding-left: 25% !important; 
+
   }
   
   td:before { 
     /* Now like a table header */
     position: absolute;
     /* Top/left values mimic padding */
-    top: 6px;
-    left: 6px;
+    top: 8px;
+    left: 10px;
     width: 45%; 
-    padding-right: 10px; 
+    padding-right: 10px !important; 
     white-space: nowrap;
   }
   
