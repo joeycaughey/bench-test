@@ -112,6 +112,7 @@ table {
       &:hover {
         > td {
           color:#008080;
+          cursor: pointer;
         }
       }
     }
